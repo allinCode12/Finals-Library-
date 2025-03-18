@@ -1,0 +1,129 @@
+.site-header {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,.3);
+    z-index: 9999;
+    &__inner-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 74px;
+        max-width: 85%;
+        margin: auto;
+    }
+    
+    &__logo {
+        max-width: 175px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__nav {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+            li {
+                a {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 12px 8.4px;
+                    border-bottom: 0 solid #0f5a39;
+                    transition: border-bottom 0.12s ease-in-out;
+                        &:hover {
+                            border-bottom: 3px solid #0f5a39;
+                            color: #0f5a39;
+                        }
+                }
+            }
+        }
+        &--open {
+            display: block;
+        }
+    }
+
+    &__menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+            transform: scaleX(-1);
+        }
+        .site-header__menu-icon {
+            width: 25px;
+            height: 2px;
+            background-color: #000;
+            display: block;
+            position: relative;
+            transition: background-color 0.3s;
+            &::before,
+            &::after {
+                content: '';
+                width: 25px;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                transition: transform 0.3s;
+            }
+            &::before {
+                top: -8px;
+            }
+            &::after {
+                top: 8px;
+            }
+        }
+    }
+}
+
+//MOBILE
+@media (max-width: 768px) {
+    .site-header {
+        &__menu-toggle {
+            display: block;
+        }
+        &__nav {
+            display: block;
+            position: absolute;
+            top: 100%;
+            right: -200%;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 1px 8px rgba(0,0,0,.1);
+            transition: right 0.3s ease-in-out;
+            z-index: -1;
+            &--open {
+                right: 0;
+            }
+            
+            ul {
+                flex-direction: column;
+                gap: 0;
+                li {
+                    width: 100%;
+                    a {
+                        display: block;
+                        padding: 1rem;
+                        font-size: 1.25rem;
+                        text-align: left;
+
+                        border-bottom: 0 solid #0f5a39;
+                        transition: border-bottom 0.12s ease-in-out;
+                        &:hover {
+                            border-bottom: 3px solid #0f5a39;
+                            color: #0f5a39;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

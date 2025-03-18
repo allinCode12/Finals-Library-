@@ -1,0 +1,117 @@
+.site-footer{
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(to right, #185300, #0b2e00);
+    color: #fff;
+    padding: 100px 0 30px;
+    font-size: 1rem;
+    line-height: 20px;
+
+    .row{
+        width: 85%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+    .col{
+        flex-basis: 25%;
+        padding: 10px;
+    }
+
+    .col:nth-child(2), .col:nth-child(3){
+        flex-basis: 15%;
+    }
+    
+    .logo{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+    
+    .col h3{
+        width: fit-content;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .email-id{
+        width: fit-content;
+        border-bottom: 1px solid #ccc;
+        margin: 20px 0;
+    }
+    
+    ul li{
+        list-style: none;
+        margin-bottom: 12px;
+    }
+    
+    ul li a{
+        text-decoration: none;    
+    }
+    
+    .social-icons .fa-brands{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        color: #000;
+        background: #fff;
+        margin-right: 15px;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+        
+    }
+
+    .social-icons .fa-brands:hover{
+        transform: translateY(-10px);
+    }
+    
+    hr{
+        width: 90%;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        margin: 20px auto;
+    }
+    
+    .copyright{
+        text-align: center;
+    }
+
+    .underline{
+        width: 100%;
+        height: 5px;
+        background: #fff;
+        border-radius: 3px;
+        position: absolute;
+        top: 25px;
+        left: 0;
+        animation: flicker 5s infinite alternate;
+    }
+
+    @keyframes flicker {
+        0% { opacity: 1; text-shadow: 0 0 5px }
+        20% { opacity: 0.8; text-shadow: 0 0 5px}
+        40% { opacity: 1; text-shadow: 0 0 5px }
+        60% { opacity: 0.6; text-shadow: 0 0 3px }
+        80% { opacity: 1; text-shadow: 0 0 5px }
+        100% { opacity: 0.9; text-shadow: 0 0 4px }
+      }
+
+    @media (max-width: 700px){
+        footer{
+            bottom: unset;
+        }
+        .col{
+            flex-basis: 100%;
+        }
+        .col:nth-child(2), .col:nth-child(3){
+            flex-basis: 100%;
+        }
+    }
+}
+
+

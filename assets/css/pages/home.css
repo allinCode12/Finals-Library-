@@ -1,0 +1,347 @@
+/* SCSS Gradient */
+main {
+  margin: 0;
+  padding-top: 74px;
+  padding-bottom: 74px;
+}
+main .home-slider {
+  width: 100%;
+  height: 90svh;
+}
+main .home-slider-section {
+  overflow-x: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+@media (min-width: 768px) {
+  main .home-slider {
+    height: 70svh;
+  }
+}
+@media (min-width: 1024px) {
+  main .home-slider {
+    height: 80lvh;
+  }
+}
+main .home-slider__item {
+  position: relative;
+  width: 100%;
+}
+main .home-slider__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main .home-slider__item::after {
+  content: "";
+  position: absolute;
+  background-image: url("/assets/images/tams-book-stacked-cropped.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  max-width: 195px;
+  height: 195px;
+  right: 0;
+  bottom: -1rem;
+  transform: scaleX(-1);
+  z-index: 1;
+  overflow-x: hidden;
+  display: none;
+}
+@media (min-width: 300px) {
+  main .home-slider__item::after {
+    display: block;
+  }
+}
+@media (min-width: 375px) {
+  main .home-slider__item::after {
+    max-width: 225px;
+    height: 225px;
+  }
+}
+@media (min-width: 600px) {
+  main .home-slider__item::after {
+    max-width: 425px;
+    height: 425px;
+    transform: none;
+    bottom: -1.5rem;
+    left: 0;
+    right: unset;
+  }
+}
+main .home-slider__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 51%;
+}
+main .home-slider__item-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  max-width: 255px;
+  text-align: left;
+  background-color: rgba(11, 51, 38, 0.8);
+  padding: 20px 20px 20px 16px;
+  border-radius: 4px;
+  border-left: 4px solid yellow;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 430px) {
+  main .home-slider__item-text {
+    max-width: 400px;
+  }
+}
+@media (min-width: 600px) {
+  main .home-slider__item-text {
+    top: 65%;
+    left: 250px;
+    max-width: 650px;
+    padding: 20px 20px 20px 30px;
+  }
+}
+@media (min-width: 1400px) {
+  main .home-slider__item-text {
+    top: 60%;
+  }
+}
+@media (min-width: 1900px) {
+  main .home-slider__item-text {
+    top: 55%;
+  }
+}
+@media (min-width: 2000px) {
+  main .home-slider__item-text {
+    top: 75%;
+  }
+}
+main .home-slider__item-text h1 {
+  font-size: 2.25rem;
+  color: #e1b746;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+@media (min-width: 768px) {
+  main .home-slider__item-text h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  main .home-slider__item-text h1 {
+    font-size: 3.5rem;
+  }
+}
+main .home-slider__item-text h2 {
+  font-size: 1.8rem;
+  color: #f1d68c;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  text-transform: capitalize;
+  text-wrap: balance;
+}
+main .home-slider__item-text p {
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  text-wrap: balance;
+}
+@media (min-width: 768px) {
+  main .home-slider__item-text p {
+    font-size: 1.2rem;
+  }
+}
+main .discover-section h2 {
+  font-family: "Anton", serif;
+  font-size: 3.625rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0 auto 1rem;
+}
+@media (min-width: 1024px) {
+  main .discover-section h2 {
+    font-size: 5rem;
+  }
+}
+main .discover-section p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  max-width: 720px;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0 auto 1rem;
+}
+@media (min-width: 1024px) {
+  main .discover-section p {
+    font-size: 1.25rem;
+  }
+}
+main .values-section .container {
+  max-width: 90%;
+}
+@media (min-width: 1200px) {
+  main .values-section .container {
+    max-width: 1180px;
+  }
+}
+main .values-section .container .values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+main .values-section .container .value-item {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 300px;
+}
+main .values-section .container .value-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .values-section .container .value-item::after {
+  content: "A";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border-right: 2px solid rgba(255, 251, 0, 0.7);
+  border-bottom: 2px solid rgba(44, 117, 102, 0.7);
+  background-color: rgba(44, 117, 102, 0.3);
+}
+main .values-section .container .value-item:hover .value-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+main .values-section .container .value-item:hover .value-copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+main .values-section .container .value-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 117, 102, 0.7);
+  z-index: 1;
+  transition: all 0.9s ease;
+}
+main .values-section .container .value-item:hover::after {
+  display: none;
+}
+main .values-section .container .value-item .value-title {
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+main .values-section .container .value-item .value-copy {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 80%;
+  z-index: 2;
+  transition: all 0.9s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+main .values-section .container .top-row {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+main .values-section .container .top-row .value-item {
+  flex: 1;
+  max-height: 200px;
+}
+@media (min-width: 1024px) {
+  main .values-section .container .top-row .value-item {
+    max-height: 300px;
+  }
+}
+main .values-section .container .middle-row {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+main .values-section .container .middle-row .value-item {
+  flex: 1;
+}
+main .values-section .container .middle-row .school-info {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .values-section .container .middle-row .school-info h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #000;
+}
+main .values-section .container .middle-row .school-info p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+main .values-section .container .learn-more-btn {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 2px solid #2C7566;
+  color: #2C7566;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+main .values-section .container .learn-more-btn:hover {
+  background-color: #2C7566;
+  color: white;
+}
+main .values-section .container .bottom-row {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+main .values-section .container .bottom-row .value-item {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  main .values-section .container .top-row,
+  main .values-section .container .middle-row,
+  main .values-section .container .bottom-row {
+    flex-direction: column;
+  }
+  main .values-section .container .value-item {
+    height: 200px;
+  }
+}

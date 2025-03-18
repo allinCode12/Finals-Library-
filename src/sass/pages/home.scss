@@ -1,0 +1,380 @@
+@use "../abstracts/variables";
+
+main {
+    margin: 0;
+    padding-top: 74px;
+    padding-bottom: 74px;
+
+    .home-slider {
+        width: 100%;
+        height: 90svh;
+
+        &-section {
+            overflow-x: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            height: 70svh;
+        }
+
+        @media (min-width: 1024px) {
+            height: 80lvh;
+        }
+
+        &__item {
+            position: relative;
+            width: 100%;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                // background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url("/assets/images/tams-book-stacked-cropped.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                max-width: 195px;
+                height: 195px;
+                right: 0;
+                bottom: -1rem;
+                transform: scaleX(-1);
+                z-index: 1;
+                overflow-x: hidden;
+                display: none;
+
+                @media (min-width: 300px) {
+                    display: block;
+                }
+
+                @media (min-width: 375px) {
+                    max-width: 225px;
+                    height: 225px;
+                }
+
+                @media (min-width: 600px) {
+                    max-width: 425px;
+                    height: 425px;
+                    transform: none;
+                    bottom: -1.5rem;
+                    left: 0;
+                    right: unset;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 51%;
+            }
+
+            &-text {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                max-width: 255px;
+                text-align: left;
+                background-color: rgba(variables.$dark-green, 0.8);
+                padding: 20px 20px 20px 16px;
+                border-radius: 4px;
+                border-left: 4px solid yellow;
+                box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+
+                @media (min-width: 430px) {
+                    max-width: 400px;
+                }
+
+                @media (min-width: 600px) {
+                    top: 65%;
+                    left: 250px;
+                    max-width: 650px;
+                    padding: 20px 20px 20px 30px;
+                }
+
+                @media (min-width: 1400px) {
+                    top: 60%;
+                }
+
+                // @media (min-width: 1600px) {
+                //     top: 55%;
+                // }
+
+                @media (min-width: 1900px) {
+                    top: 55%;
+                }
+
+                @media (min-width: 2000px) {
+                    top: 75%;
+                }
+
+                h1 {
+                    font-size: 2.25rem;
+                    color: variables.$gold-metallic;
+                    font-weight: 800;
+                    margin-bottom: 1rem;
+                    line-height: 1;
+                    text-transform: uppercase;
+                    text-wrap: balance;
+
+                    @media (min-width: 768px) {
+                        font-size: 2.5rem;
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 3.5rem;
+                    }
+                }
+
+                h2 {
+                    font-size: 1.8rem;
+                    color: variables.$jasmine;
+                    margin-bottom: 0.5rem;
+                    line-height: 1;
+                    text-transform: capitalize;
+                    text-wrap: balance;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: #fff;
+                    transition: all 0.3s ease-in-out;
+                    text-wrap: balance;
+
+                    @media (min-width: 768px) {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .discover-section {
+        h2 {
+            font-family: "Anton", serif;
+            font-size: 3.625rem;
+            font-weight: 300;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-align: center;
+            text-wrap: balance;
+            margin: 0 auto 1rem;
+
+            @media (min-width: 1024px) {
+                font-size: 5rem;
+            }
+        }
+
+        p {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.125rem;
+            max-width: 720px;
+            text-align: center;
+            text-wrap: balance;
+            margin: 0 auto 1rem;
+
+            @media (min-width: 1024px) {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    //discover
+
+    .values-section {
+        .container {
+            max-width: 90%;
+            @media (min-width: 1024px) {
+            }
+            
+            @media (min-width: 1200px) {
+                max-width: 1180px;
+            }
+    
+            .values-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+    
+            .value-item {
+                position: relative;
+                border-radius: 4px;
+                overflow: hidden;
+                height: 300px;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &::after {
+                    content: 'A';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translate(-50%, -50%);
+                    width: 100px;
+                    height: 100px;
+                    z-index: 1;
+                    transition: all 0.3s ease;
+                    border-right: 2px solid rgba(255, 251, 0, 0.7);
+                    border-bottom: 2px solid rgba(44, 117, 102, 0.7);
+                    background-color:  rgba(44, 117, 102, 0.3);
+                }
+    
+                &:hover {
+                    .value-title {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    .value-copy {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(44, 117, 102, 0.7);
+                        z-index: 1;
+                        transition: all 0.9s ease;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+    
+                .value-title {
+                    position: absolute;
+                    font-family: 'Montserrat',sans-serif;
+                    bottom: 20px;
+                    left: 20px;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+                    z-index: 2;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+    
+                .value-copy {
+                    position: absolute;
+                    bottom: 60px;
+                    left: 20px;
+                    color: white;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    max-width: 80%;
+                    z-index: 2;
+                    transition: all 0.9s ease;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+            }
+    
+            .top-row {
+                display: flex;
+                width: 100%;
+                gap: 20px;
+    
+                .value-item {
+                    flex: 1;
+                    max-height: 200px;
+    
+                    @media (min-width: 1024px) {
+                        max-height: 300px;
+                    }
+                }
+            }
+    
+            .middle-row {
+                display: flex;
+                width: 100%;
+                gap: 20px;
+    
+                .value-item {
+                    flex: 1;
+                }
+    
+                .school-info {
+                    flex: 1;
+                    padding: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+    
+                    h2 {
+                        font-size: 32px;
+                        margin-bottom: 20px;
+                        color: #000;
+                    }
+    
+                    p {
+                        margin-bottom: 20px;
+                        font-size: 16px;
+                    }
+                }
+            }
+    
+            .learn-more-btn {
+                font-size: 1rem;
+                padding: 8px 12px;
+                border: 2px solid #2C7566;
+                color: #2C7566;
+                text-decoration: none;
+                font-weight: bold;
+                text-transform: uppercase;
+                background: transparent;
+                transition: all 0.3s ease;
+    
+                &:hover {
+                    background-color: #2C7566;
+                    color: white;
+                }
+            }
+    
+            .bottom-row {
+                display: flex;
+                width: 100%;
+                gap: 20px;
+            }
+    
+            .bottom-row .value-item {
+                flex: 1;
+            }
+    
+            @media (max-width: 768px) {
+                .top-row,
+                .middle-row,
+                .bottom-row {
+                    flex-direction: column;
+                }
+    
+                .value-item {
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
